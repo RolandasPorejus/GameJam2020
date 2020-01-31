@@ -1,0 +1,2 @@
+D:\GameJam 2020\obj\Debug\Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache
+D:\GameJam 2020\obj\Debug\Assembly-CSharp-Editor-firstpass.csproj.CoreCompileInputs.cache
