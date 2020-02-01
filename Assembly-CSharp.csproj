@@ -55,9 +55,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AcidDestroyer.cs" />
+     <Compile Include="Assets\Scripts\GameEnd.cs" />
+     <Compile Include="Assets\Scripts\GlobalVars.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerPickup.cs" />
+     <Compile Include="Assets\Scripts\RestartScene.cs" />
      <Compile Include="Assets\Scripts\SimpleMouseLook.cs" />
+     <Compile Include="Assets\Scripts\SocketSystem.cs" />
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>D:/GameJam 2020/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>

@@ -8,14 +8,14 @@ public class PlayerPickup : MonoBehaviour
     GameObject mainCamera;
     GameObject player;
     GameObject carryPosition;
-    GameObject carriedObject;
     GameObject pickupText;
     GameObject dropText;
     public float pickupDistance;
     public float carryDistance;
     public float smooth;
 
-    bool carrying;
+    public GameObject carriedObject;
+    public bool carrying;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +43,7 @@ public class PlayerPickup : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             selectedObject = hit.transform.gameObject;
-            if (selectedObject.tag == "Carry" && Vector3.Distance(mainCamera.transform.position, selectedObject.transform.position) < pickupDistance)
+            if ((selectedObject.tag == "Box" || selectedObject.tag == "Key") && Vector3.Distance(mainCamera.transform.position, selectedObject.transform.position) < pickupDistance)
             {
                 pickupText.SetActive(true);
             }
@@ -70,7 +70,7 @@ public class PlayerPickup : MonoBehaviour
             else
             {
 
-                if (selectedObject != null && selectedObject.tag == "Carry")
+                if (selectedObject != null && (selectedObject.tag == "Box" || selectedObject.tag == "Key"))
                 {
                     carriedObject = hit.transform.gameObject;
                     Pickup(carriedObject);
@@ -93,7 +93,7 @@ public class PlayerPickup : MonoBehaviour
         carriedObject.transform.position = carryPosition.transform.position;
     }
 
-    void Drop()
+    public void Drop()
     {
         carrying = false;
         dropText.SetActive(false);
@@ -109,6 +109,6 @@ public class PlayerPickup : MonoBehaviour
 
         carriedObject.transform.position = Vector3.Lerp(carriedObject.transform.position, mainCamera.transform.position 
             + mainCamera.transform.forward * carryDistance, Time.deltaTime * smooth);
-        carriedObject.transform.rotation = Quaternion.identity;
+        //carriedObject.transform.rotation = Quaternion.identity;
     }
 }

@@ -16,7 +16,9 @@ public class SimpleMouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Look();
+        if (!GetComponent<GameEnd>().Dead) {
+            Look();
+        }
     }
 
     public void Look() // Look rotation (UP down is Camera) (Left right is Transform rotation)

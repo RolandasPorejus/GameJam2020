@@ -22,40 +22,43 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float horMove = moveSpeed * Input.GetAxis("Horizontal");
-        float vertMove = moveSpeed * Input.GetAxis("Vertical");
-
-        if (horMove != 0 || vertMove != 0)
+        if (!GetComponent<GameEnd>().Dead)
         {
-            var move_vec = new Vector3(horMove, 0, vertMove);
-            //Debug.Log(move_vec);
+            float horMove = moveSpeed * Input.GetAxis("Horizontal");
+            float vertMove = moveSpeed * Input.GetAxis("Vertical");
 
-            move_vec = Camera.main.transform.TransformDirection(move_vec);
-
-            Vector3 v = rb.velocity;
-            v.x = move_vec.x;
-            v.z = move_vec.z;
-            rb.velocity = v;
-        }
-
-        if (CanJump() && Math.Abs(rb.velocity.y) < 0.01)
-        {
-            jumping = false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (CanJump())
+            if (horMove != 0 || vertMove != 0)
             {
-                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                jumping = true;
+                var move_vec = new Vector3(horMove, 0, vertMove);
+                //Debug.Log(move_vec);
+
+                move_vec = Camera.main.transform.TransformDirection(move_vec);
+
+                Vector3 v = rb.velocity;
+                v.x = move_vec.x;
+                v.z = move_vec.z;
+                rb.velocity = v;
             }
-        }
+
+            if (CanJump() && Math.Abs(rb.velocity.y) < 0.01)
+            {
+                jumping = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (CanJump())
+                {
+                    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                    jumping = true;
+                }
+            }
 
 
-        if (horMove == 0 && vertMove == 0 && !jumping)
-        {
-            rb.velocity = Vector3.zero;
+            if (horMove == 0 && vertMove == 0 && !jumping)
+            {
+                rb.velocity = Vector3.zero;
+            }
         }
     }
 

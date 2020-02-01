@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Fire
   - Carry
+  - Key
+  - Box
+  - Socket
+  - Acid
   layers:
   - Default
   - TransparentFX
