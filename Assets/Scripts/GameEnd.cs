@@ -50,6 +50,11 @@ public class GameEnd : MonoBehaviour
                 GameoverText.SetActive(true);
                 GameoverText.GetComponent<Text>().text = "You melted in acid! Ouch.";
                 break;
+            case 3:
+                BtnRestart.SetActive(true);
+                GameoverText.SetActive(true);
+                GameoverText.GetComponent<Text>().text = "You got squished...";
+                break;
             default:
                 BtnRestart.SetActive(true);
                 GameoverText.SetActive(true);

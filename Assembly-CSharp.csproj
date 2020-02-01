@@ -62,7 +62,9 @@
      <Compile Include="Assets\Scripts\PlayerPickup.cs" />
      <Compile Include="Assets\Scripts\RestartScene.cs" />
      <Compile Include="Assets\Scripts\SimpleMouseLook.cs" />
+     <Compile Include="Assets\Scripts\SmasherSystem.cs" />
      <Compile Include="Assets\Scripts\SocketSystem.cs" />
+     <Compile Include="Assets\Scripts\SpawnBox.cs" />
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>D:/GameJam 2020/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
