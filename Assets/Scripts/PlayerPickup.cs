@@ -12,6 +12,9 @@ public class PlayerPickup : MonoBehaviour
     GameObject pickupText;
     GameObject dropText;
     public float pickupDistance;
+    public float carryDistance;
+    public float smooth;
+
     bool carrying;
 
     // Start is called before the first frame update
@@ -33,12 +36,13 @@ public class PlayerPickup : MonoBehaviour
         int x_center = Screen.width / 2;
         int y_center = Screen.height / 2;
 
+        GameObject selectedObject = null;
         Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x_center, y_center));
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
         {
-            GameObject selectedObject = hit.transform.gameObject;
+            selectedObject = hit.transform.gameObject;
             if (selectedObject.tag == "Carry" && Vector3.Distance(mainCamera.transform.position, selectedObject.transform.position) < pickupDistance)
             {
                 pickupText.SetActive(true);
@@ -65,16 +69,18 @@ public class PlayerPickup : MonoBehaviour
             }
             else
             {
-                carriedObject = hit.transform.gameObject;
-                Pickup(carriedObject);
+
+                if (selectedObject != null && selectedObject.tag == "Carry")
+                {
+                    carriedObject = hit.transform.gameObject;
+                    Pickup(carriedObject);
+                }
             }
         }
 
         if (carrying)
         {
-            carriedObject.transform.position = carryPosition.transform.position;
-            carriedObject.transform.rotation = carryPosition.transform.rotation;
-            carriedObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            Carry();
         }
     }
 
@@ -92,5 +98,17 @@ public class PlayerPickup : MonoBehaviour
         carrying = false;
         dropText.SetActive(false);
         carriedObject.GetComponent<Rigidbody>().useGravity = true;
+        carriedObject = null;
+    }
+
+    void Carry()
+    {
+        //carriedObject.transform.position = carryPosition.transform.position;
+        //carriedObject.transform.rotation = carryPosition.transform.rotation;
+        //carriedObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+        carriedObject.transform.position = Vector3.Lerp(carriedObject.transform.position, mainCamera.transform.position 
+            + mainCamera.transform.forward * carryDistance, Time.deltaTime * smooth);
+        carriedObject.transform.rotation = Quaternion.identity;
     }
 }
