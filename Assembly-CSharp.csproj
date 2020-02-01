@@ -55,12 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PlayerPickup.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerPickup.cs" />
      <Compile Include="Assets\Scripts\SimpleMouseLook.cs" />
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/GameJam 2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>D:/GameJam 2020/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
@@ -69,9 +66,6 @@
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/GameJam 2020/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline">
- <HintPath>D:/GameJam 2020/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>D:/GameJam 2020/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
