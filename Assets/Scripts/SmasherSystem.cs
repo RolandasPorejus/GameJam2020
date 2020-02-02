@@ -31,7 +31,7 @@ public class SmasherSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (diffTreshold >= DifficultySystem.Difficulty)
+        if (diffTreshold <= DifficultySystem.Difficulty)
         {
             if (!timerBegin)
             {

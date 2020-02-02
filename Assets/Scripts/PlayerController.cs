@@ -55,9 +55,9 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            if (horMove == 0 && vertMove == 0 && !jumping)
+            if (horMove == 0 && vertMove == 0 && !jumping && rb.velocity.y != 0)
             {
-                rb.velocity = Vector3.zero;
+                //rb.velocity = Vector3.zero;
             }
         }
     }
