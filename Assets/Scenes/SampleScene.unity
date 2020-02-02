@@ -245,12 +245,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &829775986 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8759116275803089027, guid: e7accebc3281ef84fb41322a9947937e,
-    type: 3}
-  m_PrefabInstance: {fileID: 891270534569911542}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &913384256
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +854,8 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnedObject
       value: 
-      objectReference: {fileID: 829775986}
+      objectReference: {fileID: 3614108995782587231, guid: 5fc73bb200546ca40804a84ba0d22862,
+        type: 3}
     - target: {fileID: 5326465572743954553, guid: e7accebc3281ef84fb41322a9947937e,
         type: 3}
       propertyPath: spawnFrequency
@@ -1097,6 +1092,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3917644718196178713, guid: 46691c1ffd02cb448b8815d2f79a8672,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 5007906076768331282, guid: 46691c1ffd02cb448b8815d2f79a8672,
         type: 3}
       propertyPath: m_Name
@@ -1434,6 +1434,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CompanionBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685443379447032404, guid: 5fc73bb200546ca40804a84ba0d22862,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fc73bb200546ca40804a84ba0d22862, type: 3}
