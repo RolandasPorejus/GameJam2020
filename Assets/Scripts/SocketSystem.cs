@@ -30,7 +30,7 @@ public class SocketSystem : MonoBehaviour
             collision.gameObject.transform.position = transform.position;
             collision.gameObject.transform.rotation = transform.rotation;
             collision.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            collision.gameObject.tag = "Untagged";
+            //collision.gameObject.tag = "Untagged";
             keyInside = true;
             DifficultySystem.IncreaseDifficulty();
         }

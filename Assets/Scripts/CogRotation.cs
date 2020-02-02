@@ -21,7 +21,7 @@ public class CogRotation : MonoBehaviour
         {
             if (!soundStarted)
             {
-                GetComponent<AudioSource>().Play();
+                GetComponent<AudioSource>().Play(0);
             }
             Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime * DifficultySystem.Difficulty);
             GetComponent<Rigidbody>().MoveRotation(GetComponent<Rigidbody>().rotation * deltaRotation);
