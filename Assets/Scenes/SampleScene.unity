@@ -1092,11 +1092,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3917644718196178713, guid: 46691c1ffd02cb448b8815d2f79a8672,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 5007906076768331282, guid: 46691c1ffd02cb448b8815d2f79a8672,
         type: 3}
       propertyPath: m_Name
@@ -1434,11 +1429,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CompanionBox
-      objectReference: {fileID: 0}
-    - target: {fileID: 4685443379447032404, guid: 5fc73bb200546ca40804a84ba0d22862,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fc73bb200546ca40804a84ba0d22862, type: 3}
