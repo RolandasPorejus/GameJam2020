@@ -15,7 +15,7 @@ public class PlayerPickup : MonoBehaviour
     public float smooth;
 
     public GameObject carriedObject;
-    public bool carrying;
+    public bool carrying = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class PlayerPickup : MonoBehaviour
         carryPosition = GameObject.Find("CarryPosition");
         pickupText = GameObject.Find("PickupText");
         dropText = GameObject.Find("DropText");
-        player = GameObject.Find("Player");
+        player = GameObject.FindWithTag("Player");
 
         pickupText.SetActive(false);
         dropText.SetActive(false);

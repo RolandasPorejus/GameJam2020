@@ -21,10 +21,13 @@ public class SmasherSystem : MonoBehaviour
     bool timerBegin;
 
     GameObject Player;
+    AudioSource audioData;
+    public AudioClip pushOut;
+    public AudioClip pushIn;
 
-    // Start is called before the first frame update
     void Start()
     {
+        audioData = GetComponent<AudioSource>();
         Player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -39,11 +42,15 @@ public class SmasherSystem : MonoBehaviour
 
                 if (currentPosition >= maxMove)
                 {
+                    audioData.clip = pushOut;
+                    audioData.Play();
                     direction *= -1;
                     currentPosition = maxMove;
                 }
                 else if (currentPosition <= minMove)
                 {
+                    audioData.clip = pushIn;
+                    audioData.Play();
                     direction *= -1;
                     currentPosition = minMove;
                 }

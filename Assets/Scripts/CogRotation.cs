@@ -6,11 +6,12 @@ public class CogRotation : MonoBehaviour
 {
     public float speed;
     public Vector3 m_EulerAngleVelocity;
+    private bool soundStarted;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        soundStarted = false;
     }
 
     // Update is called once per frame
@@ -18,6 +19,10 @@ public class CogRotation : MonoBehaviour
     {
         if (DifficultySystem.Difficulty > 0)
         {
+            if (!soundStarted)
+            {
+                GetComponent<AudioSource>().Play();
+            }
             Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime * DifficultySystem.Difficulty);
             GetComponent<Rigidbody>().MoveRotation(GetComponent<Rigidbody>().rotation * deltaRotation);
         }

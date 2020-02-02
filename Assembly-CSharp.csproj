@@ -55,9 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CogRotation.cs" />
-     <Compile Include="Assets\ConveyorMover.cs" />
      <Compile Include="Assets\Scripts\AcidDestroyer.cs" />
+     <Compile Include="Assets\Scripts\CogRotation.cs" />
+     <Compile Include="Assets\Scripts\ConveyorMover.cs" />
      <Compile Include="Assets\Scripts\GameEnd.cs" />
      <Compile Include="Assets\Scripts\GlobalVars.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
